@@ -11,5 +11,5 @@ public class AppApplication {
     public static int ontouchAlpha = 0;//触控区透明度0 - 255,0为透明
     public static Bitmap cancle,down,yaogan,cd;
     public static Bitmap border;
-    public static Skill skill;
+    public static Skill skill;//技能
 }
