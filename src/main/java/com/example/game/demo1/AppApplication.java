@@ -12,5 +12,4 @@ public class AppApplication {
     public static Bitmap cancle,down,yaogan,cd;
     public static Bitmap border;
     public static Skill skill;
-
 }
