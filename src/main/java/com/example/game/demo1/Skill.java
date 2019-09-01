@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.widget.TextView;
+
 
 /**
  * Created by Liziguo on 2018/6/16.
@@ -18,10 +18,7 @@ public abstract class Skill {
     private float xxx,yyy;//判断拖动点是否超出两倍r的范围
     private final float calcelx, cancely;
     public float angle;//技能按下后 x y指向xx yy的角度
-    public Bitmap imgdown, imgyaogan,imgcd,imgcancel;
-//    public Bitmap img;
-    public TextView textView;
-    public Bitmap imgborder;
+    public Bitmap img, imgborder, imgdown, imgyaogan,imgcd,imgcancel;
     private final float r2;
     private final float r3=50*AppApplication.ratio;
     public boolean down=false;
@@ -35,7 +32,7 @@ public abstract class Skill {
     2 技能2
     3 技能3
      */
-    public Skill(int jineng, int cd, CircleView circleView){
+    public Skill(int jineng, int cd, Bitmap image){
         this.jineng=jineng;
         switch (jineng){
             case 0:
@@ -61,8 +58,7 @@ public abstract class Skill {
         else r2=80*AppApplication.ratio;
         calcelx =AppApplication.width-r2*2;
         cancely =AppApplication.height/4;
-//        img=image;
-        textView = circleView;
+        img=image;
         imgborder=AppApplication.border;
         imgdown=AppApplication.down;
         imgyaogan=AppApplication.yaogan;
@@ -171,15 +167,13 @@ public abstract class Skill {
             //技能图片和技能边框下移
             AppApplication.re.top+=drawpx;
             AppApplication.re.bottom+=drawpx;
-//            g.drawBitmap(textView,null,AppApplication.re,p);
-            g.drawRect(AppApplication.re,p);
+            g.drawBitmap(img,null,AppApplication.re,p);
             AppApplication.re.left-=drawpx;
             AppApplication.re.top-=drawpx;
             AppApplication.re.right+=drawpx;
             AppApplication.re.bottom+=drawpx;
 
             g.drawBitmap(imgborder,null,AppApplication.re,p);
-//            g.drawBitmap(null,null,AppApplication.re,p);
             if(jineng!=0){
                 AppApplication.re.left=xxx-r3;
                 AppApplication.re.top=yyy-r3;
@@ -194,8 +188,7 @@ public abstract class Skill {
                 g.drawBitmap(imgcancel,null,AppApplication.re,p);
             }
         }else{
-//            g.drawBitmap(textView,null,AppApplication.re,p);
-            g.drawRect(AppApplication.re,p);
+            g.drawBitmap(img,null,AppApplication.re,p);
             if(jineng!=0 && cd>0) {
                 p.setTextSize(40*AppApplication.ratio);
                  p.setColor(Color.WHITE);
@@ -210,7 +203,6 @@ public abstract class Skill {
             AppApplication.re.top-=drawpx;
             AppApplication.re.right+=drawpx;
             AppApplication.re.bottom+=drawpx;
-//            g.drawBitmap(null,null,AppApplication.re,p);
             g.drawBitmap(imgborder,null,AppApplication.re,p);
         }
     }

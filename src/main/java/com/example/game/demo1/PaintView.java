@@ -20,7 +20,7 @@ public class PaintView extends RelativeLayout implements Runnable {
     R 没有R
      */
 
-    public Skill A=new Skill(0,100, new CircleView(getContext(),Color.BLUE,60)) {
+    public Skill A=new Skill(0,100, BitmapFactory.decodeResource(getResources(),R.drawable.putonggongji)) {
         @Override
         public void down_main() { }
         @Override
@@ -28,7 +28,7 @@ public class PaintView extends RelativeLayout implements Runnable {
         @Override
         public void up() { }
     };
-    public Skill Q=new Skill(1,1000,new CircleView(getContext(),Color.BLUE,60)) {
+    public Skill Q=new Skill(1,1000,BitmapFactory.decodeResource(getResources(),R.drawable.skill1)) {
         @Override
         public void down_main() { }
         @Override
@@ -41,7 +41,7 @@ public class PaintView extends RelativeLayout implements Runnable {
             }
         }
     };
-    public Skill W=new Skill(2,1000, new CircleView(getContext(),Color.BLUE,60)) {
+    public Skill W=new Skill(2,1000, BitmapFactory.decodeResource(getResources(),R.drawable.skill2)) {
         @Override
         public void down_main() { }
         @Override

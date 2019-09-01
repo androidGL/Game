@@ -16,7 +16,6 @@ public class Move {
     public Move(){
         rBigCircle = 480 * 0.5f * AppApplication.ratio;
         rSmallCircle = 300 * 0.5f * AppApplication.ratio;
-//        img = BitmapFactory.decodeResource(AppApplication.main.getResources(), R.drawable.yao);
         img = AppApplication.yaogan;
     }
     public void down(float x,float y){
